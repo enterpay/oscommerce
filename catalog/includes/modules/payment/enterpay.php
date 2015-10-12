@@ -143,7 +143,7 @@ class enterpay {
 
         foreach ($params as $k => $v) {
             if ($v !== null && $v !== '' && $k !== 'debug') {
-                $hmac_params[$k] = urlencode($k) . '=' . urlencode($v);
+                $hmac_params[$k] = urlencode($k) . '=' . urlencode(htmlentities($v, ENT_COMPAT, CHARSET));
             }
         }
 
